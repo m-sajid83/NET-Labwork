@@ -1,0 +1,431 @@
+﻿@page
+@model IndexModel
+
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8">
+
+    <title>Online Event Registration</title>
+
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            padding: 30px;
+        }
+
+        .container {
+            width: 700px;
+            margin: auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .row {
+            margin-bottom: 18px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 6px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 9px;
+            box-sizing: border-box;
+        }
+
+        .option {
+            display: inline;
+            font-weight: normal;
+            margin-right: 15px;
+        }
+
+        .error {
+            color: red;
+            font-size: 14px;
+        }
+
+        button {
+            padding: 10px 25px;
+            font-size: 16px;
+        }
+
+        .result {
+            margin-top: 25px;
+            padding: 20px;
+            background-color: #eeeeee;
+            border: 1px solid #999;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>ONLINE EVENT REGISTRATION</h1>
+
+    <form method="post">
+
+        <!-- Full Name -->
+
+        <div class="row">
+
+            <label asp-for="FullName">
+                Full Name
+            </label>
+
+            <input asp-for="FullName"
+                   type="text">
+
+            <span asp-validation-for="FullName"
+                  class="error">
+            </span>
+
+        </div>
+
+
+        <!-- Email -->
+
+        <div class="row">
+
+            <label asp-for="Email">
+                Email
+            </label>
+
+            <input asp-for="Email"
+                   type="email">
+
+            <span asp-validation-for="Email"
+                  class="error">
+            </span>
+
+        </div>
+
+
+        <!-- Mobile -->
+
+        <div class="row">
+
+            <label asp-for="Mobile">
+                Mobile
+            </label>
+
+            <input asp-for="Mobile"
+                   type="text">
+
+            <span asp-validation-for="Mobile"
+                  class="error">
+            </span>
+
+        </div>
+
+
+        <!-- College -->
+
+        <div class="row">
+
+            <label asp-for="College">
+                College
+            </label>
+
+            <input asp-for="College"
+                   type="text">
+
+            <span asp-validation-for="College"
+                  class="error">
+            </span>
+
+        </div>
+
+
+        <!-- Department -->
+
+        <div class="row">
+
+            <label>
+                Department
+            </label>
+
+            <input asp-for="Department"
+                   type="radio"
+                   value="Computer">
+
+            <span class="option">
+                Computer
+            </span>
+
+
+            <input asp-for="Department"
+                   type="radio"
+                   value="IT">
+
+            <span class="option">
+                IT
+            </span>
+
+
+            <input asp-for="Department"
+                   type="radio"
+                   value="Mechanical">
+
+            <span class="option">
+                Mechanical
+            </span>
+
+
+            <input asp-for="Department"
+                   type="radio"
+                   value="Civil">
+
+            <span class="option">
+                Civil
+            </span>
+
+        </div>
+
+
+        <!-- Event -->
+
+        <div class="row">
+
+            <label asp-for="Event">
+                Event
+            </label>
+
+            <select asp-for="Event">
+
+                <option value="">
+                    Select Event
+                </option>
+
+                <option value="PT">
+                    PT
+                </option>
+
+                <option value="YOGA">
+                    YOGA
+                </option>
+
+                <option value="LEB">
+                    LEB
+                </option>
+
+                <option value="CLASS">
+                    CLASS
+                </option>
+
+            </select>
+
+            <span asp-validation-for="Event"
+                  class="error">
+            </span>
+
+        </div>
+
+
+        <!-- Gender -->
+
+        <div class="row">
+
+            <label>
+                Gender
+            </label>
+
+            <input asp-for="Gender"
+                   type="radio"
+                   value="Male">
+
+            <span class="option">
+                Male
+            </span>
+
+
+            <input asp-for="Gender"
+                   type="radio"
+                   value="Female">
+
+            <span class="option">
+                Female
+            </span>
+
+        </div>
+
+
+        <!-- Skills -->
+
+        <div class="row">
+
+            <label>
+                Skills
+            </label>
+
+            <input type="checkbox"
+                   name="Skills"
+                   value="C">
+
+            <span class="option">
+                C
+            </span>
+
+
+            <input type="checkbox"
+                   name="Skills"
+                   value="C#">
+
+            <span class="option">
+                C#
+            </span>
+
+
+            <input type="checkbox"
+                   name="Skills"
+                   value="Java">
+
+            <span class="option">
+                Java
+            </span>
+
+
+            <input type="checkbox"
+                   name="Skills"
+                   value=".NET">
+
+            <span class="option">
+                .NET
+            </span>
+
+        </div>
+
+
+        <!-- Address -->
+
+        <div class="row">
+
+            <label asp-for="Address">
+                Address
+            </label>
+
+            <textarea asp-for="Address"
+                      rows="4">
+            </textarea>
+
+        </div>
+
+
+        <!-- Terms -->
+
+        <div class="row">
+
+            <input asp-for="TermsAccepted"
+                   type="checkbox">
+
+            <span class="option">
+                I Accept Terms & Conditions
+            </span>
+
+            <br>
+
+            <span asp-validation-for="TermsAccepted"
+                  class="error">
+            </span>
+
+        </div>
+
+
+        <!-- Register Button -->
+
+        <div class="row">
+
+            <button type="submit">
+                Register
+            </button>
+
+        </div>
+
+    </form>
+
+
+    <!-- Result -->
+
+    @if (Model.IsSubmitted)
+    {
+        <div class="result">
+
+            <h2>
+                Registration Details
+            </h2>
+
+            <p>
+                <strong>Full Name:</strong>
+                @Model.FullName
+            </p>
+
+            <p>
+                <strong>Email:</strong>
+                @Model.Email
+            </p>
+
+            <p>
+                <strong>Mobile:</strong>
+                @Model.Mobile
+            </p>
+
+            <p>
+                <strong>College:</strong>
+                @Model.College
+            </p>
+
+            <p>
+                <strong>Department:</strong>
+                @Model.Department
+            </p>
+
+            <p>
+                <strong>Event:</strong>
+                @Model.Event
+            </p>
+
+            <p>
+                <strong>Gender:</strong>
+                @Model.Gender
+            </p>
+
+            <p>
+                <strong>Skills:</strong>
+                @string.Join(", ", Model.Skills)
+            </p>
+
+            <p>
+                <strong>Address:</strong>
+                @Model.Address
+            </p>
+
+            <p>
+                <strong>Terms Accepted:</strong>
+                @(Model.TermsAccepted ? "Yes" : "No")
+            </p>
+
+        </div>
+    }
+
+</div>
+
+</body>
+</html>
