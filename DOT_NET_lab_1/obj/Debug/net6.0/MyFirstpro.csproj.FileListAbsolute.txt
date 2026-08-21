@@ -1,0 +1,15 @@
+/Users/mac/MyFirstpro/bin/Debug/net6.0/MyFirstpro
+/Users/mac/MyFirstpro/bin/Debug/net6.0/MyFirstpro.deps.json
+/Users/mac/MyFirstpro/bin/Debug/net6.0/MyFirstpro.runtimeconfig.json
+/Users/mac/MyFirstpro/bin/Debug/net6.0/MyFirstpro.dll
+/Users/mac/MyFirstpro/bin/Debug/net6.0/MyFirstpro.pdb
+/Users/mac/MyFirstpro/obj/Debug/net6.0/MyFirstpro.csproj.AssemblyReference.cache
+/Users/mac/MyFirstpro/obj/Debug/net6.0/MyFirstpro.GeneratedMSBuildEditorConfig.editorconfig
+/Users/mac/MyFirstpro/obj/Debug/net6.0/MyFirstpro.AssemblyInfoInputs.cache
+/Users/mac/MyFirstpro/obj/Debug/net6.0/MyFirstpro.AssemblyInfo.cs
+/Users/mac/MyFirstpro/obj/Debug/net6.0/MyFirstpro.csproj.CoreCompileInputs.cache
+/Users/mac/MyFirstpro/obj/Debug/net6.0/MyFirstpro.dll
+/Users/mac/MyFirstpro/obj/Debug/net6.0/refint/MyFirstpro.dll
+/Users/mac/MyFirstpro/obj/Debug/net6.0/MyFirstpro.pdb
+/Users/mac/MyFirstpro/obj/Debug/net6.0/MyFirstpro.genruntimeconfig.cache
+/Users/mac/MyFirstpro/obj/Debug/net6.0/ref/MyFirstpro.dll
