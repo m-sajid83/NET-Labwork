@@ -1,0 +1,556 @@
+﻿@page
+@model IndexModel
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <meta charset="utf-8" />
+
+    <title>ONLINE EVENT REGISTRATION</title>
+
+    <style>
+
+        .auto-style1 {
+            width: 148px;
+            text-align: left;
+        }
+
+        .auto-style2 {
+            width: 147px;
+        }
+
+        .auto-style5 {
+            width: 837px;
+        }
+
+        .auto-style6 {
+            width: 277px;
+        }
+
+        .auto-style7 {
+            width: 152px;
+        }
+
+        .auto-style9 {
+            width: 147px;
+            height: 33px;
+        }
+
+        .auto-style10 {
+            width: 316px;
+            height: 33px;
+        }
+
+        .auto-style11 {
+            height: 33px;
+        }
+
+        .auto-style12 {
+            width: 270px;
+        }
+
+        .auto-style13 {
+            width: 316px;
+        }
+
+        .auto-style14 {
+            width: 266px;
+        }
+
+        input[type="text"],
+        input[type="email"] {
+            width: 250px;
+        }
+
+        select {
+            width: 180px;
+        }
+
+        textarea {
+            resize: none;
+        }
+
+        .error {
+            color: red;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <h1>ONLINE EVENT REGISTRATION</h1>
+
+
+    <!-- FULL NAME, EMAIL, MOBILE -->
+
+    <table style="width:100%;">
+
+        <!-- Full Name -->
+
+        <tr>
+
+            <td class="auto-style1">
+                Full Name
+            </td>
+
+            <td class="auto-style6">
+
+                <input asp-for="FullName"
+                       type="text" />
+
+            </td>
+
+            <td class="auto-style5">
+
+                <span asp-validation-for="FullName"
+                      class="error">
+                </span>
+
+            </td>
+
+        </tr>
+
+
+        <!-- Email -->
+
+        <tr>
+
+            <td class="auto-style1">
+                Email
+            </td>
+
+            <td class="auto-style6">
+
+                <input asp-for="Email"
+                       type="text" />
+
+            </td>
+
+            <td class="auto-style5">
+
+                <span asp-validation-for="Email"
+                      class="error">
+                </span>
+
+            </td>
+
+        </tr>
+
+
+        <!-- Mobile -->
+
+        <tr>
+
+            <td class="auto-style1">
+                Mobile
+            </td>
+
+            <td class="auto-style6">
+
+                <input asp-for="Mobile"
+                       type="text" />
+
+            </td>
+
+            <td class="auto-style5">
+
+                <span asp-validation-for="Mobile"
+                      class="error">
+                </span>
+
+            </td>
+
+        </tr>
+
+    </table>
+
+
+    <!-- COLLEGE, DEPARTMENT, EVENT -->
+
+    <table style="width:100%;">
+
+        <!-- College -->
+
+        <tr>
+
+            <td class="auto-style9">
+                College
+            </td>
+
+            <td class="auto-style10">
+
+                <input asp-for="College"
+                       type="text" />
+
+            </td>
+
+            <td class="auto-style11">
+
+                <span asp-validation-for="College"
+                      class="error">
+                </span>
+
+            </td>
+
+        </tr>
+
+
+        <!-- Department -->
+
+        <tr>
+
+            <td class="auto-style2">
+                Department
+            </td>
+
+            <td class="auto-style13">
+
+                <input asp-for="Department"
+                       type="radio"
+                       value="Computer" />
+
+                Computer
+
+                <br />
+
+                <input asp-for="Department"
+                       type="radio"
+                       value="IT" />
+
+                IT
+
+                <br />
+
+                <input asp-for="Department"
+                       type="radio"
+                       value="Mechanical" />
+
+                Mechanical
+
+                <br />
+
+                <input asp-for="Department"
+                       type="radio"
+                       value="Civil" />
+
+                Civil
+
+            </td>
+
+            <td>
+                &nbsp;
+            </td>
+
+        </tr>
+
+
+        <!-- Event -->
+
+        <tr>
+
+            <td class="auto-style2">
+                Event
+            </td>
+
+            <td class="auto-style13">
+
+                <select asp-for="Event">
+
+                    <option value="">
+                        Select Event
+                    </option>
+
+                    <option value="PT">
+                        PT
+                    </option>
+
+                    <option value="YOGA">
+                        YOGA
+                    </option>
+
+                    <option value="LEB">
+                        LEB
+                    </option>
+
+                    <option value="CLASS">
+                        CLASS
+                    </option>
+
+                </select>
+
+            </td>
+
+            <td>
+
+                <span asp-validation-for="Event"
+                      class="error">
+                </span>
+
+            </td>
+
+        </tr>
+
+    </table>
+
+
+    <!-- GENDER, SKILLS, ADDRESS -->
+
+    <table style="width:100%;">
+
+        <!-- Gender -->
+
+        <tr>
+
+            <td class="auto-style7">
+                Gender
+            </td>
+
+            <td class="auto-style14">
+
+                <input asp-for="Gender"
+                       type="radio"
+                       value="Male" />
+
+                Male
+
+                <input asp-for="Gender"
+                       type="radio"
+                       value="Female" />
+
+                Female
+
+            </td>
+
+            <td>
+                &nbsp;
+            </td>
+
+        </tr>
+
+
+        <!-- Skills -->
+
+        <tr>
+
+            <td class="auto-style7">
+                Skills
+            </td>
+
+            <td class="auto-style14">
+
+                <input type="checkbox"
+                       name="Skills"
+                       value="C" />
+
+                C
+
+                <br />
+
+                <input type="checkbox"
+                       name="Skills"
+                       value="C#" />
+
+                C#
+
+                <br />
+
+                <input type="checkbox"
+                       name="Skills"
+                       value="Java" />
+
+                Java
+
+                <br />
+
+                <input type="checkbox"
+                       name="Skills"
+                       value=".NET" />
+
+                .NET
+
+            </td>
+
+            <td>
+                &nbsp;
+            </td>
+
+        </tr>
+
+
+        <!-- Address -->
+
+        <tr>
+
+            <td class="auto-style7">
+                Address
+            </td>
+
+            <td class="auto-style14">
+
+                <textarea asp-for="Address"
+                          rows="4"
+                          cols="25">
+                </textarea>
+
+            </td>
+
+            <td>
+                &nbsp;
+            </td>
+
+        </tr>
+
+    </table>
+
+
+    <!-- TERMS, REGISTER, DBRESULT -->
+
+    <table style="width:100%;">
+
+        <!-- Terms -->
+
+        <tr>
+
+            <td class="auto-style7">
+                Terms
+            </td>
+
+            <td class="auto-style12">
+
+                <input asp-for="TermsAccepted"
+                       type="checkbox" />
+
+                I Accept Terms &amp; Conditions
+
+            </td>
+
+            <td>
+                &nbsp;
+            </td>
+
+        </tr>
+
+
+        <!-- Register Button -->
+
+        <tr>
+
+            <td class="auto-style7">
+                &nbsp;
+            </td>
+
+            <td class="auto-style12">
+
+                <button type="submit"
+                        form="registrationForm">
+
+                    Register
+
+                </button>
+
+            </td>
+
+            <td>
+                &nbsp;
+            </td>
+
+        </tr>
+
+
+        <!-- DBResult -->
+
+        <tr>
+
+            <td class="auto-style7">
+                &nbsp;
+            </td>
+
+            <td class="auto-style12">
+
+                @if (Model.IsSubmitted)
+                {
+                    <div>
+
+                        Full Name:
+                        @Model.FullName
+
+                        <br />
+
+                        Email:
+                        @Model.Email
+
+                        <br />
+
+                        Mobile:
+                        @Model.Mobile
+
+                        <br />
+
+                        College:
+                        @Model.College
+
+                        <br />
+
+                        Department:
+                        @Model.Department
+
+                        <br />
+
+                        Event:
+                        @Model.Event
+
+                        <br />
+
+                        Gender:
+                        @Model.Gender
+
+                        <br />
+
+                        Skills:
+                        @string.Join(" ", Model.Skills)
+
+                        <br />
+
+                        Address:
+                        @Model.Address
+
+                        <br />
+
+                        Terms Accepted:
+                        @(Model.TermsAccepted ? "Yes" : "No")
+
+                    </div>
+                }
+                else
+                {
+                    <span>[DBResult]</span>
+                }
+
+            </td>
+
+            <td>
+                &nbsp;
+            </td>
+
+        </tr>
+
+    </table>
+
+
+    <!-- FORM -->
+
+    <form method="post"
+          id="registrationForm">
+
+        <!-- Hidden submit is not needed -->
+
+    </form>
+
+</body>
+
+</html>
