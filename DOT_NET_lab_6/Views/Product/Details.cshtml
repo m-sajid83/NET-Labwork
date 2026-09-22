@@ -1,0 +1,57 @@
+@{
+    ViewData["Title"] = "Product Details";
+}
+
+<style>
+    .details-box {
+        border: 1px solid #ccc;
+        width: 500px;
+        padding: 25px;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px #ccc;
+        background-color: #f9f9f9;
+    }
+
+    .price {
+        color: green;
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .back-button {
+        padding: 8px 12px;
+        background-color: #555;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+</style>
+
+<h2>Product Details</h2>
+
+<div class="details-box">
+
+    <h3>@ViewBag.ProductName</h3>
+
+    <p>
+        <b>Product ID:</b>
+        @ViewBag.ProductId
+    </p>
+
+    <p>
+        <b>Description:</b>
+        @ViewBag.Description
+    </p>
+
+    <p class="price">
+        Price: ₹@ViewBag.Price
+    </p>
+
+    <br />
+
+    <a class="back-button"
+       href="@Url.Action("Index", "Product")">
+        Back to Products
+    </a>
+
+</div>

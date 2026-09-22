@@ -1,0 +1,94 @@
+@{
+    ViewData["Title"] = "Products";
+}
+
+<style>
+    .product-box {
+        border: 1px solid #ccc;
+        width: 250px;
+        padding: 20px;
+        margin: 15px;
+        display: inline-block;
+        vertical-align: top;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px #ccc;
+        background-color: #f9f9f9;
+    }
+
+    .product-box h3 {
+        color: #333;
+    }
+
+    .price {
+        color: green;
+        font-weight: bold;
+    }
+
+    .details-button {
+        display: inline-block;
+        padding: 8px 12px;
+        background-color: #007bff;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+
+    .details-button:hover {
+        background-color: #0056b3;
+    }
+</style>
+
+<h2>Product Catalog</h2>
+
+<hr />
+
+<div class="product-box">
+    <h3>Laptop</h3>
+
+    <p>
+        HP Laptop with 16GB RAM and 512GB SSD
+    </p>
+
+    <p class="price">
+        Price: ₹80000
+    </p>
+
+    <a class="details-button"
+       href="@Url.Action("Details", "Product", new { id = 1 })">
+        View Details
+    </a>
+</div>
+
+<div class="product-box">
+    <h3>Mobile</h3>
+
+    <p>
+        Samsung Mobile with 8GB RAM and 128GB Storage
+    </p>
+
+    <p class="price">
+        Price: ₹30000
+    </p>
+
+    <a class="details-button"
+       href="@Url.Action("Details", "Product", new { id = 2 })">
+        View Details
+    </a>
+</div>
+
+<div class="product-box">
+    <h3>Headphones</h3>
+
+    <p>
+        Wireless Bluetooth Headphones
+    </p>
+
+    <p class="price">
+        Price: ₹5000
+    </p>
+
+    <a class="details-button"
+       href="@Url.Action("Details", "Product", new { id = 3 })">
+        View Details
+    </a>
+</div>
