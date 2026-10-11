@@ -1,0 +1,14 @@
+@{
+    ViewData["Title"] = "Success";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3 style="color:green;">Submission Successful!</h3>
+
+<partial name="_SuccessMessage" />
+
+<br />
+
+<a asp-controller="Feedback" asp-action="Create">
+    Add Another Feedback
+</a>
