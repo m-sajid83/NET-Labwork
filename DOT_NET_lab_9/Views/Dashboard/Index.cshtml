@@ -1,0 +1,18 @@
+@model DashboardViewModel
+@{ ViewData["Title"]="Placement Dashboard"; }
+<h2 class="fw-bold">Placement Dashboard</h2><p class="text-secondary">Overview of student placement performance</p><hr>
+<h4>Placement Overview</h4>
+<div class="row g-3 my-2">
+<div class="col-md-4"><div class="card p-3"><div class="text-secondary">Total Students Placed</div><div class="display-6 fw-bold">@Model.TotalPlaced</div></div></div>
+<div class="col-md-4"><div class="card p-3"><div class="text-secondary">Highest Package</div><div class="display-6 fw-bold">@Model.HighestPackage.ToString("0.00") <small class="fs-6">LPA</small></div></div></div>
+<div class="col-md-4"><div class="card p-3"><div class="text-secondary">Average Package</div><div class="display-6 fw-bold">@Model.AveragePackage.ToString("0.00") <small class="fs-6">LPA</small></div></div></div>
+</div>
+<p><a class="btn btn-primary" asp-action="CompanyDetails">View Placed Students &amp; Company Details →</a></p><hr>
+<h4>All Students Placement Status</h4>
+<div class="card p-3 table-responsive"><table class="table table-bordered table-hover align-middle mb-0">
+<thead><tr><th>Enrollment No.</th><th>Student Name</th><th>Department</th><th>Status</th><th>Company</th><th>Job Role</th><th>Package (LPA)</th></tr></thead>
+<tbody>@foreach(var s in Model.Students){<tr><td>@s.EnrollmentNo</td><td>@s.StudentName</td><td>@s.Department</td><td><span class="badge @(s.IsPlaced?"bg-success":"bg-secondary")">@(s.IsPlaced?"Placed":"Not Placed")</span></td><td>@s.CompanyName</td><td>@s.JobRole</td><td>@(s.PackageLPA.HasValue?s.PackageLPA.Value.ToString("0.00"):"-")</td></tr>}</tbody>
+</table><div class="d-flex justify-content-between mt-3"><span>Page @Model.PageNumber of @Model.TotalPages</span><div>
+@if(Model.PageNumber>1){<a class="btn btn-outline-primary btn-sm" asp-action="Index" asp-route-page="@(Model.PageNumber-1)">Previous</a>}
+@if(Model.PageNumber<Model.TotalPages){<a class="btn btn-primary btn-sm" asp-action="Index" asp-route-page="@(Model.PageNumber+1)">Next</a>}
+</div></div></div>

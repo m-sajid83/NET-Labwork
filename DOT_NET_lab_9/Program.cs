@@ -1,0 +1,10 @@
+using DOT_NET_lab_9.Data;
+var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddControllersWithViews();
+var app = builder.Build();
+PlacementDb.Initialize();
+if (!app.Environment.IsDevelopment()) app.UseExceptionHandler("/Dashboard/Index");
+app.UseStaticFiles();
+app.UseRouting();
+app.MapControllerRoute("default", "{controller=Dashboard}/{action=Index}/{id?}");
+app.Run();

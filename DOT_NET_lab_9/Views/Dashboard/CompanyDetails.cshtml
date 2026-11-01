@@ -1,0 +1,9 @@
+@{ ViewData["Title"]="Company Details"; var companies=(List<CompanySummary>)ViewBag.CompanySummary; var students=(List<StudentPlacement>)ViewBag.PlacedStudents; }
+<h2 class="fw-bold">Company Placement Statistics</h2><hr>
+<p><a asp-action="Index" class="btn btn-outline-primary">← Back to Dashboard</a></p>
+<h4>Hiring Summary by Company</h4><div class="card p-3 table-responsive my-3"><table class="table table-bordered mb-0">
+<thead><tr><th>Company Name</th><th>Total Hired</th><th>Max Package (LPA)</th><th>Average Package (LPA)</th></tr></thead>
+<tbody>@foreach(var c in companies){<tr><td>@c.CompanyName</td><td>@c.TotalHired</td><td>@c.MaxPackage.ToString("0.00")</td><td>@c.AveragePackage.ToString("0.00")</td></tr>}</tbody></table></div>
+<h4>All Placed Students List</h4><div class="card p-3 table-responsive my-3"><table class="table table-bordered mb-0">
+<thead><tr><th>Enrollment No.</th><th>Student Name</th><th>Department</th><th>Company</th><th>Job Role</th><th>Package (LPA)</th></tr></thead>
+<tbody>@foreach(var s in students){<tr><td>@s.EnrollmentNo</td><td>@s.StudentName</td><td>@s.Department</td><td>@s.CompanyName</td><td>@s.JobRole</td><td>@s.PackageLPA?.ToString("0.00")</td></tr>}</tbody></table></div>
