@@ -1,0 +1,47 @@
+@model IEnumerable<Product>
+@{
+    ViewData["Title"] = "Product List";
+}
+<h1>Inventory Management System</h1>
+<p>Manage product names, quantities, and prices.</p>
+
+@if (TempData["Message"] != null)
+{
+    <div class="message">@TempData["Message"]</div>
+}
+
+<p><a class="btn" asp-action="Create">+ Add Product</a></p>
+
+<table>
+    <thead>
+        <tr>
+            <th>Product ID</th>
+            <th>Product Name</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+    @if (!Model.Any())
+    {
+        <tr><td colspan="5">No products available.</td></tr>
+    }
+    else
+    {
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.ProductId</td>
+                <td>@item.ProductName</td>
+                <td>@item.Quantity</td>
+                <td>@item.Price.ToString("N2")</td>
+                <td class="actions">
+                    <a asp-action="Edit" asp-route-id="@item.ProductId">Edit</a>
+                    <a asp-action="Delete" asp-route-id="@item.ProductId">Delete</a>
+                </td>
+            </tr>
+        }
+    }
+    </tbody>
+</table>
