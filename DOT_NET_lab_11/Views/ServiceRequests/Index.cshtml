@@ -1,0 +1,20 @@
+@model IReadOnlyList<ServiceRequest>
+@{ ViewData["Title"] = "Campus Requests"; var searchTerm = ViewData["SearchTerm"] as string ?? string.Empty; }
+<section class="page-heading"><div>
+  <p class="eyebrow">CAMPUS SERVICE MANAGEMENT</p>
+  <h1>Service requests</h1>
+  <p class="muted">Submit campus issues and follow their progress in one place.</p>
+</div><a class="button" asp-action="Create">+ New request</a></section>
+<form asp-action="Index" method="get" class="search-bar">
+  <input type="search" name="searchTerm" value="@searchTerm" placeholder="Search student, enrollment or category" />
+  <button class="button button-secondary" type="submit">Search</button><a class="clear-link" asp-action="Index">Clear</a>
+</form>
+<div class="table-card"><div class="table-heading"><h2>All requests</h2><span>@Model.Count record(s)</span></div>
+<div class="table-scroll"><table><thead><tr><th>Request</th><th>Student</th><th>Category</th><th>Description</th><th>Submitted</th><th>Status</th><th>Update</th></tr></thead><tbody>
+@if (Model.Count == 0) { <tr><td colspan="7" class="empty-state">No service requests found.</td></tr> }
+else { foreach (var item in Model) { var statusClass = item.Status.Replace(" ", "").ToLowerInvariant(); <tr>
+<td class="id-cell">#@item.Id</td><td><strong>@item.StudentName</strong><small>@item.EnrollmentNo</small></td><td>@item.Category</td><td class="description-cell">@item.Description</td><td>@item.CreatedAt.ToString("dd MMM yyyy")</td><td><span class="status @statusClass">@item.Status</span></td><td>
+<form asp-action="ChangeStatus" method="post" class="status-form"><input type="hidden" name="id" value="@item.Id" /><select name="status" aria-label="New status for request @item.Id">
+<option value="Pending" selected="@(item.Status == "Pending" ? "selected" : null)">Pending</option><option value="In Progress" selected="@(item.Status == "In Progress" ? "selected" : null)">In Progress</option><option value="Resolved" selected="@(item.Status == "Resolved" ? "selected" : null)">Resolved</option></select><button type="submit" class="button button-small">Save</button></form>
+</td></tr> } }
+</tbody></table></div></div>

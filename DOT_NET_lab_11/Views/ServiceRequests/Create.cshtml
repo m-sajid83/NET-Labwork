@@ -1,0 +1,19 @@
+@model ServiceRequestInput
+@{ ViewData["Title"] = "New Request"; }
+<section class="page-heading"><div>
+  <p class="eyebrow">CAMPUS SERVICE MANAGEMENT</p>
+  <h1>Submit a service request</h1>
+  <p class="muted">Enter the issue details. Your request will be saved with Pending status.</p>
+</div></section>
+<div class="form-card">
+  <form asp-action="Create" method="post">
+    <div asp-validation-summary="ModelOnly" class="validation-summary"></div>
+    <div class="form-grid">
+      <div class="form-group"><label asp-for="StudentName">Student name</label><input asp-for="StudentName" placeholder="Enter full name" /><span asp-validation-for="StudentName" class="field-error"></span></div>
+      <div class="form-group"><label asp-for="EnrollmentNo">Enrollment number</label><input asp-for="EnrollmentNo" placeholder="Example: CE24001" /><span asp-validation-for="EnrollmentNo" class="field-error"></span></div>
+      <div class="form-group form-wide"><label asp-for="Category">Service category</label><select asp-for="Category"><option value="">Select a category</option><option>Facilities</option><option>IT Support</option><option>Library</option><option>Transport</option><option>Other</option></select><span asp-validation-for="Category" class="field-error"></span></div>
+      <div class="form-group form-wide"><label asp-for="Description">Issue description</label><textarea asp-for="Description" rows="5" placeholder="Describe the campus issue (10-500 characters)"></textarea><span asp-validation-for="Description" class="field-error"></span></div>
+    </div>
+    <div class="form-actions"><button type="submit" class="button">Submit request</button><a asp-action="Index" class="clear-link">Cancel</a></div>
+  </form>
+</div>

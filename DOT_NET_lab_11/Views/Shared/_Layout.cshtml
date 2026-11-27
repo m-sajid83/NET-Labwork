@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>@ViewData["Title"] - Smart Campus Service Desk</title>
+  <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="container header-inner">
+      <a class="brand" asp-controller="ServiceRequests" asp-action="Index">Smart Campus <span>Service Desk</span></a>
+      <nav>
+        <a asp-controller="ServiceRequests" asp-action="Index">Requests</a>
+        <a asp-controller="ServiceRequests" asp-action="Create">New Request</a>
+      </nav>
+    </div>
+  </header>
+  <main class="container page-content">
+    @if (TempData["Message"] is string message) { <div class="alert">@message</div> }
+    @RenderBody()
+  </main>
+  <footer class="site-footer"><div class="container">Smart Campus Service Desk | .NET Technologies Practical 11</div></footer>
+</body>
+</html>
